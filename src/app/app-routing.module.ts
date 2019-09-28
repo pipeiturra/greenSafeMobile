@@ -14,7 +14,9 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+  },
+  { path: 'agregar-incidencia/:latitud/:longitud', 
+  loadChildren: './pages/agregar-incidencia/agregar-incidencia.module#AgregarIncidenciaPageModule' }
 ];
 
 @NgModule({
