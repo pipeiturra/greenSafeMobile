@@ -10,22 +10,50 @@
 
 <ion-content color="dark">
 
-  <ion-list color="dark">
+  <form (ngSubmit)="onSubmit()" padding-right>
+    
+    <ion-list color="dark">
     <ion-item>
-      <ion-textarea [(ngModel)]="descripcion" placeholder="¿Qué deseas reportar?"></ion-textarea>
+      <ion-textarea [(ngModel)]="incidencia.desc" [ngModelOptions]="{standalone: true}" placeholder="¿Qué deseas reportar?"></ion-textarea>
     </ion-item>
     <ion-item>
       <ion-label>Categorías</ion-label>
-      <ion-select>
-        <ion-select-option>Basuras</ion-select-option>
-        <ion-select-option>Mal olor</ion-select-option>
-        <ion-select-option selected>contaminación de agua</ion-select-option>
-        <ion-select-option>Pearl Jam</ion-select-option>
-        <ion-select-option>Smashing Pumpkins</ion-select-option>
-        <ion-select-option>Soundgarden</ion-select-option>
-        <ion-select-option>Stone Temple Pilots</ion-select-option>
+      <ion-select [(ngModel)]="incidencia.categoria" [ngModelOptions]="{standalone: true}">
+        <ion-select-option value="basura">Basuras</ion-select-option>
+        <ion-select-option value="mal olor">Mal olor</ion-select-option>
+        <ion-select-option value="agua contaminada">Agua contaminada</ion-select-option>
       </ion-select>
     </ion-item>
-  </ion-list>
+    <ion-radio-group (ionChange)="gravedadRadio($event)">
+      <ion-list-header>
+        <ion-label>Gravedad</ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Alta</ion-label>
+        <ion-radio name="gravedad" slot="start" value="alta"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Media</ion-label>
+        <ion-radio name="gravedad" slot="start" value="media"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Baja</ion-label>
+        <ion-radio name="gravedad" slot="start" value="baja"></ion-radio>
+      </ion-item>
+    </ion-radio-group>  
+    <ion-item>
+        <ion-label>Privacidad</ion-label>
+        <ion-select [(ngModel)]="incidencia.privada" [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="false">Publica</ion-select-option>
+          <ion-select-option value="true">Privada</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <button ion-button type="submit" style="display:none" block>Add Todo</button>
+    </ion-list>
 
+ </form>
 </ion-content>

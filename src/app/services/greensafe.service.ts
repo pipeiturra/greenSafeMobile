@@ -11,4 +11,10 @@ export class GreensafeService {
   constructor() { 
     console.log('Servicio inicializado');
   }
+
+  crearIncidencia()
+  {
+
+    
+  }
 }
