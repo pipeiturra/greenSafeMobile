@@ -12,7 +12,19 @@
 
   <ion-list color="dark">
     <ion-item>
-      <ion-textarea placeholder="¿Qué deseas reportar?"></ion-textarea>
+      <ion-textarea [(ngModel)]="descripcion" placeholder="¿Qué deseas reportar?"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categorías</ion-label>
+      <ion-select>
+        <ion-select-option>Basuras</ion-select-option>
+        <ion-select-option>Mal olor</ion-select-option>
+        <ion-select-option selected>contaminación de agua</ion-select-option>
+        <ion-select-option>Pearl Jam</ion-select-option>
+        <ion-select-option>Smashing Pumpkins</ion-select-option>
+        <ion-select-option>Soundgarden</ion-select-option>
+        <ion-select-option>Stone Temple Pilots</ion-select-option>
+      </ion-select>
     </ion-item>
   </ion-list>
 

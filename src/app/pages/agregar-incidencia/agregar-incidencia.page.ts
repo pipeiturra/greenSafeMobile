@@ -11,6 +11,7 @@ export class AgregarIncidenciaPage implements OnInit {
 
   latitud: number;
   longitud: number;
+  descripcion: string = '';
 
   constructor(public greensafeService: GreensafeService,
             private route: ActivatedRoute) { 
